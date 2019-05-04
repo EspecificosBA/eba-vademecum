@@ -95,5 +95,13 @@ h2.category-name {
     color: #596992;
     font-size: 1.1rem;
     margin-bottom: 0.2rem;
+}
 
+.product-body .chip {
+    background: linear-gradient(25deg, rgba(24,40,72,.8) 0%, rgba(24,40,72,.7) 100%);
+    color: white;
+}
+
+.product-body .chip.ph {
+    background: #3B5FBF!important;
 }

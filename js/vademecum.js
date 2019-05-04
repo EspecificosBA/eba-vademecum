@@ -1157,13 +1157,17 @@ const categories = [
   "Protección Solar",
 ]
 
-const Section = (title, paragraph) => (
+const Chip = (label, key, className) => (
+  <span className={`chip ${className||''}`} key={key}>{label}</span>
+);
+
+const Section = (title, paragraph, prepend) => (
   <div>
     <h4 className="section-name">
       { title }
     </h4>
     <p className="section-body">
-      { paragraph }
+      { prepend }{ paragraph }
     </p>
   </div>
 );
@@ -1182,6 +1186,9 @@ const Product = (product, key) => (
       }
       {
         product.application && Section('Aplicación', product.application)
+      }
+      {
+        product.actives && Section('Activos', product.actives.map((a, i) => Chip(a, i)), product.ph&&Chip(`PH ${product.ph}`, null, 'ph'))
       }
     </div>
   </div>
