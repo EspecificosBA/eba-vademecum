@@ -19,7 +19,7 @@
   "scripts": {
     "start": "./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
     "build": "./node_modules/.bin/babel js/vademecum.js --out-dir lib",
-    "pdf": "wkhtmltopdf.exe toc --xsl-style-sheet pdf/toc.xsl index.html pdf/vademecum.pdf"
+    "pdf": "wkhtmltopdf.exe -B 0 -L 0 -R 0 -T 0 toc --xsl-style-sheet pdf/toc.xsl index.html pdf/vademecum.pdf"
   },
   "repository": {
     "type": "git",

@@ -1157,12 +1157,12 @@ const categories = [
   "Protección Solar",
 ]
 
-const Chip = (label, key, className) => (
-  <span className={`chip ${className||''}`} key={key}>{label}</span>
+const Tag = (label, key, className) => (
+  <span className={`tag ${className||''}`} key={key}>{label}</span>
 );
 
 const Section = (title, paragraph, prepend) => (
-  <div>
+  <div className="section-container">
     <h4 className="section-name">
       { title }
     </h4>
@@ -1188,7 +1188,12 @@ const Product = (product, key) => (
         product.application && Section('Aplicación', product.application)
       }
       {
-        product.actives && Section('Activos', product.actives.map((a, i) => Chip(a, i)), product.ph&&Chip(`PH ${product.ph}`, null, 'ph'))
+        product.actives &&
+          Section(
+            'Activos',
+            product.actives.map((a, i) => Tag(a, i, 'is-active')),
+            product.ph && Tag(`PH ${product.ph}`, null, 'is-ph')
+          )
       }
     </div>
   </div>
@@ -1196,12 +1201,12 @@ const Product = (product, key) => (
 
 const Category = (categoryName, products) => (
   <div className="category-container">
-    <div className="category-title" id={categoryName.toLowerCase().replace(' ', '-')}>
+    <div className="category" id={categoryName.toLowerCase().replace(' ', '-')}>
       <h2 className="category-name">{categoryName}</h2>
-      {
-        products.map((p, i) => Product(p, i))
-      }
     </div>
+    {
+      products.map((p, i) => Product(p, i))
+    }
   </div>
 );
 
