@@ -1158,14 +1158,22 @@ const categories = [
   "Protección Solar",
 ]
 
-const Section = (title, paragraph) => {
-  return e(
-    'div',
-    null,
-    e('h4', {className: 'section-name'}, title),
-    e('p', {className: 'section-body'}, paragraph)
-  )
-};
+const Section = (title, paragraph) => (
+  <div>
+    <h4 className="section-name">
+      { title }
+    </h4>
+    <p className="section-body">
+      { paragraph }
+    </p>
+  </div>
+);
+
+const Product = (product, key) => (
+  <div className="product-container">
+
+  </div>
+);
 
 const Product = (product, key) => {
   return e(
@@ -1186,7 +1194,9 @@ const Category = (categoryName, products) => {
   return e(
     'div',
     {className: 'category-container'},
-    e('h2', {className: 'category-name'}, categoryName),
+    e('div', {className: 'category-title', id: categoryName.toLowerCase().replace(' ', '-')}, 
+      e('h2', {className: 'category-name'}, categoryName)
+    ),
     products.map((p, i) => Product(p, i))
   )
 }
@@ -1202,6 +1212,7 @@ const Vademecum = () => {
 }
 
 const domContainer = document.querySelector('#vademecum');
+
 ReactDOM.render(e(
   'div',
   {className: ''},

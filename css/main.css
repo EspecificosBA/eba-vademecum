@@ -5,28 +5,59 @@ body {
     color: #182F40;
 }
 
+.cover {
+    text-align: center;
+}
+
+.cover .cover-logo,
+.cover .cover-products {
+    max-width: 30rem;
+    margin-top: 1rem;
+}
+
+.cover h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    padding: 3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
 
 .eba-hero {
-    background-color: #0F305E;
+    background: #182848;
     color: white;
     text-align: center;
 }
 
-.category-name {
-    background-color: #334875;
-    padding: 2rem 1rem;
+h2,
+h2.category-name {
+    background: rgb(24,40,72);
+    background: linear-gradient(25deg, rgba(24,40,72,1) 0%, rgba(24,40,72,0.8) 100%);
+    padding: 3rem 1rem 1rem 1rem;
     color: white;
     font-family: 'Raleway', sans-serif;
     font-size: 1.8rem;
-    box-shadow: 0 3px 5px 0px rgba(0,0,0,0.5);
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: 0.05rem;
     page-break-before: always;
 }
 
+/* .category-title::after{
+    display: block;
+    content: '';
+    width: 50%;
+    height: 6rem;
+    transform: skew(-30deg);
+    background: rgba(0, 38, 84, 0.7);
+    position: relative;
+    top: 0;
+    left: -50px;
+    box-shadow: 0 3px 5px 0px rgba(0,0,0,0.5);
+} */
+
 .product-name {
-    background-color: #596992;
+    background-color: rgba(24,40,72,0.8);
     color: white;
     padding: 0.5rem 1rem;
     max-width: 75%;
@@ -34,12 +65,15 @@ body {
     font-weight: 300;
 }
 
+.us-container,
 .product-container {
     page-break-inside: avoid;
 }
 
+.us-body,
 .product-body {
     padding: 0 1rem;
+    text-align: justify;
 }
 
 .product-body p.product-short-desc {

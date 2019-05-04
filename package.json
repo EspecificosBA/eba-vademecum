@@ -1,0 +1,30 @@
+{
+  "name": "eba-vademecum",
+  "version": "1.0.0",
+  "description": "Auto-generated pdf based on a HTML file and ReactJS",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-es2015": "^7.0.0-beta.53"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel js --out-dir lib",
+    "pdf": "wkhtmltopdf.exe toc --xsl-style-sheet pdf/toc.xsl index.html pdf/vademecum.pdf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gogs.labs/tati/eba-vademecum.git"
+  },
+  "author": "Tatiana Inama",
+  "license": "ISC"
+}
