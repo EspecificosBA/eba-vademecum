@@ -1142,7 +1142,7 @@ const products = {
   ]
 }
 
-const e = React.createElement;
+const dom = React.createElement;
 
 
 const categories = [
@@ -1169,21 +1169,15 @@ const Section = (title, paragraph) => (
   </div>
 );
 
-const Product = (product, key) => (
-  <div className="product-container">
-
-  </div>
-);
-
 const Product = (product, key) => {
-  return e(
+  return dom(
     'div',
     {key, className: 'product-container'},
-    e('h3', {className: 'product-name'}, product.name),
-    e(
+    dom('h3', {className: 'product-name'}, product.name),
+    dom(
       'div',
       {className: 'product-body'},
-      e('p', {className: 'product-short-desc'}, product.shortDesc),
+      dom('p', {className: 'product-short-desc'}, product.shortDesc),
       Section('Descripción', product.fullDesc),
       Section('Aplicación', product.application)
     )
@@ -1191,11 +1185,11 @@ const Product = (product, key) => {
 }
 
 const Category = (categoryName, products) => {
-  return e(
+  return dom(
     'div',
     {className: 'category-container'},
-    e('div', {className: 'category-title', id: categoryName.toLowerCase().replace(' ', '-')}, 
-      e('h2', {className: 'category-name'}, categoryName)
+    dom('div', {className: 'category-title', id: categoryName.toLowerCase().replace(' ', '-')}, 
+      dom('h2', {className: 'category-name'}, categoryName)
     ),
     products.map((p, i) => Product(p, i))
   )
@@ -1203,7 +1197,7 @@ const Category = (categoryName, products) => {
 
 const Vademecum = () => {
      return categories.map((categoryName, i) => {
-      return e(
+      return dom(
         'div',
         {key: i},
         Category(categoryName, products[categoryName])
@@ -1213,7 +1207,7 @@ const Vademecum = () => {
 
 const domContainer = document.querySelector('#vademecum');
 
-ReactDOM.render(e(
+ReactDOM.render(dom(
   'div',
   {className: ''},
   Vademecum()
