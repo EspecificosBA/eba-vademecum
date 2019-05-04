@@ -1169,46 +1169,53 @@ const Section = (title, paragraph) => (
   </div>
 );
 
-const Product = (product, key) => {
-  return dom(
-    'div',
-    {key, className: 'product-container'},
-    dom('h3', {className: 'product-name'}, product.name),
-    dom(
-      'div',
-      {className: 'product-body'},
-      dom('p', {className: 'product-short-desc'}, product.shortDesc),
-      Section('Descripción', product.fullDesc),
-      Section('Aplicación', product.application)
-    )
-  )
-}
+const Product = (product, key) => (
+  <div className="product-container">
+    <h3 className="product-name">
+      {product.name}
+    </h3>
+    <div className="product-body">
+      <p className="product-short-desc">
+        {product.shortDesc}
+      </p>
+      {
+        Section('Descripción', product.fullDesc)
+      }
+      {
+        product.application && Section('Aplicación', product.application)
+      }
+    </div>
+  </div>
+);
 
-const Category = (categoryName, products) => {
-  return dom(
-    'div',
-    {className: 'category-container'},
-    dom('div', {className: 'category-title', id: categoryName.toLowerCase().replace(' ', '-')}, 
-      dom('h2', {className: 'category-name'}, categoryName)
-    ),
-    products.map((p, i) => Product(p, i))
-  )
-}
+const Category = (categoryName, products) => (
+  <div className="category-container">
+    <div className="category-title" id={categoryName.toLowerCase().replace(' ', '-')}>
+      <h2 className="category-name">{categoryName}</h2>
+      {
+        products.map((p, i) => Product(p, i))
+      }
+    </div>
+  </div>
+);
 
 const Vademecum = () => {
-     return categories.map((categoryName, i) => {
-      return dom(
-        'div',
-        {key: i},
+  return categories.map((categoryName, i) => (
+    <div key={i}>
+      {
         Category(categoryName, products[categoryName])
-      )
-     });
+      }
+    </div>
+  ))
 }
 
 const domContainer = document.querySelector('#vademecum');
 
-ReactDOM.render(dom(
-  'div',
-  {className: ''},
-  Vademecum()
+ReactDOM.render((
+  <div>
+    {
+      Vademecum()
+    }
+  </div>
 ), domContainer);
+
