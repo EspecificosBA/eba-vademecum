@@ -1144,7 +1144,6 @@ const products = {
 
 const dom = React.createElement;
 
-
 const categories = [
   "Higiene",
   "Máscaras",

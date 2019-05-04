@@ -29,6 +29,10 @@ body {
     text-align: center;
 }
 
+.eba-foundations .columns{
+    text-align: center;
+    padding: 0 1rem;
+}
 h2,
 h2.category-name {
     background: rgb(24,40,72);
