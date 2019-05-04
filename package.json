@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.0.0",
+    "puppeteer": "^1.15.0",
+    "puppeteer-core": "^1.15.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

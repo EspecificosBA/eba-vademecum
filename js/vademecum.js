@@ -1157,6 +1157,8 @@ const categories = [
   "Protección Solar",
 ]
 
+const mkCategoryTag = categoryName => categoryName.toLowerCase().replace(' ', '-');
+
 const Tag = (label, key, className) => (
   <span className={`tag ${className||''}`} key={key}>{label}</span>
 );
@@ -1201,7 +1203,7 @@ const Product = (product, key) => (
 
 const Category = (categoryName, products) => (
   <div className="category-container">
-    <div className="category" id={categoryName.toLowerCase().replace(' ', '-')}>
+    <div className="category" id={mkCategoryTag(categoryName)}>
       <h2 className="category-name">{categoryName}</h2>
     </div>
     {
@@ -1210,6 +1212,32 @@ const Category = (categoryName, products) => (
   </div>
 );
 
+const ToC = () => (
+  <div className="table-of-content container">
+    <h2>Indice</h2>
+    <div className="toc-container">
+      {
+        categories.map((categoryName, i) => (
+          <div className="columns is-mobile">
+            <div className="column is-11">
+              <a href={`#${mkCategoryTag(categoryName)}`}>{categoryName}</a>
+              {
+                products[categoryName].map(product => (
+                  <div>
+                    { product.name }
+                  </div>
+                ))
+              }
+            </div>
+            <div className="column is-1">
+              { i }
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+)
 const Vademecum = () => {
   return categories.map((categoryName, i) => (
     <div key={i}>
@@ -1224,6 +1252,9 @@ const domContainer = document.querySelector('#vademecum');
 
 ReactDOM.render((
   <div>
+    {
+      ToC()
+    }
     {
       Vademecum()
     }
