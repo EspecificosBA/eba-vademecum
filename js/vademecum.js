@@ -1172,9 +1172,13 @@ const Product = (product, key) => {
     'div',
     {key, className: 'product-container'},
     e('h3', {className: 'product-name'}, product.name),
-    e('p', {className: 'product-short-desc'}, product.shortDesc),
-    Section('Descripción', product.fullDesc),
-    Section('Aplicación', product.application)
+    e(
+      'div',
+      {className: 'product-body'},
+      e('p', {className: 'product-short-desc'}, product.shortDesc),
+      Section('Descripción', product.fullDesc),
+      Section('Aplicación', product.application)
+    )
   )
 }
 
