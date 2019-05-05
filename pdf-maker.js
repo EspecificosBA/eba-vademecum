@@ -6,7 +6,7 @@ const puppeteer = require('puppeteer');
   await page.goto('http://localhost:5500/', {waitUntil: 'networkidle2'});
   //await page.emulateMedia('screen');
   await page.pdf({
-      path: 'sample.pdf',
+      path: 'vademecum-mobile.pdf',
       height: '1450',
     });
     // displayHeaderFooter 
