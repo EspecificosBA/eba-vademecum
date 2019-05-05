@@ -50,11 +50,12 @@ html {
 
 table {
     page-break-before: always;
+    width: 100%;
 }
 
-table tbody tr {
+table tbody tr,
+tr * {
     page-break-inside: avoid!important;
-    vertical-align: top;
 }
 
 table.table th,
@@ -67,9 +68,6 @@ table thead {
     display: table-header-group;
 }
 
-table.toc-table {
-    width: 100%;
-}
 
 table.toc-table .toc-section {
     padding: .4rem 1rem;
@@ -165,6 +163,7 @@ h3.product-name {
 .us-body,
 .product-body {
     padding: 0 1rem;
+    margin-top: 0px;
 }
 
 .product-body p.product-short-desc {
@@ -184,6 +183,7 @@ h3.product-name {
     font-weight: 600;
     color: #596992;
     font-size: 1.2rem;
+    max-height: 2rem;
 }
 
 .tag {

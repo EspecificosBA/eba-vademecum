@@ -1211,7 +1211,7 @@ const Category = (categoryName, products) => (
     </thead>
     <tbody>
       {
-        products.map((p, i) => (
+        products.filter(p => p.name !== "R3epair Eye Contour").map((p, i) => (
           <tr><td>
             { Product(p, i) }
           </td></tr>
