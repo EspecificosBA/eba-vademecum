@@ -52,6 +52,11 @@ table {
     page-break-before: always;
 }
 
+table tbody tr {
+    page-break-inside: avoid!important;
+    vertical-align: top;
+}
+
 table.table th,
 table.table td {
     padding: 0;
@@ -61,12 +66,9 @@ table.table td {
 table thead {
     display: table-header-group;
 }
+
 table.toc-table {
     width: 100%;
-}
-
-table.toc-table tbody tr {
-    page-break-inside: avoid;
 }
 
 table.toc-table .toc-section {
@@ -98,7 +100,6 @@ table.toc-table .toc-content {
 
 .toc-container .columns.is-mobile {
     margin-bottom: .75rem;
-    page-break-inside: avoid;
 }
 
 .toc-container .column.is-11,
@@ -134,8 +135,7 @@ h2 {
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: 0.05rem;
-    page-break-before: always;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 h3.product-name {
@@ -149,10 +149,15 @@ h3.product-name {
 
 .us-container,
 .product-container {
-    page-break-inside: avoid;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
+.us-container,
+.foundations-container {
+    padding: 1rem;
+    text-align: center;
+
+}
 .product-container {
     background-color: #f5f5f5;
 }
@@ -160,7 +165,6 @@ h3.product-name {
 .us-body,
 .product-body {
     padding: 0 1rem;
-    text-align: justify;
 }
 
 .product-body p.product-short-desc {

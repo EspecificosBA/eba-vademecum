@@ -9,8 +9,6 @@ const puppeteer = require('puppeteer');
       path: 'sample.pdf',
       height: '1450',
     });
-    // displayHeaderFooter: true,
-    // footerTemplate: '<div style="width:100%;font-size:11px!important;color:grey!important;text-align:right!important;padding-right:10px!important;" class="pdfheader"><span class="pageNumber"></span></div>',
-    // margin: {bottom: 35}
+    // displayHeaderFooter 
   await browser.close();
 })();

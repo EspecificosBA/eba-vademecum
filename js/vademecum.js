@@ -346,7 +346,6 @@ const products = {
       "fullDesc": "Máscara activa. Ayuda a aumentar los mecanismos de defensa de la piel, aportando beneficios en tratamientos de rosácea, acné, cutis graso, manchas cutáneas y pieles desvitalizadas. Aporta ácidos grasos insaturados esenciales, disminuye la inflamación, ayuda a normalizar la piel",
       "application": "Aplicar con la piel limpia, luego de retirar Exfoliating Scrub, percibirá un suave picor durante un minuto al llegar a las zonas más profundas de la piel. Dejar actuar durante 20 minutos, observará al retirar una piel suave, limpia y fresca, aún en las instancias más sensibles. Puede combinarse en métodos sinérgicos con Micropeeling o Peeling Biorregulador",
       "actives": [
-        "Acido Linoleico",
         "Acido Linolénico",
         "Avena Sativa",
         "Malva",
@@ -1193,7 +1192,7 @@ const Product = (product, key) => (
         product.actives &&
           Section(
             'Activos',
-            product.actives.map((a, i) => Tag(a, i, 'is-active')),
+            product.actives.join(', '),
             product.ph && Tag(`PH ${product.ph}`, null, 'is-ph')
           )
       }
@@ -1202,14 +1201,27 @@ const Product = (product, key) => (
 );
 
 const Category = (categoryName, products) => (
-  <div className="category-container">
-    <div className="category" id={mkCategoryTag(categoryName)}>
-      <h2 className="category-name">{categoryName}</h2>
-    </div>
-    {
-      products.map((p, i) => Product(p, i))
-    }
-  </div>
+  <table className="category-container table is-fullwidth">
+    <thead className="category" id={mkCategoryTag(categoryName)}>
+      <tr>
+        <th>
+          <h2 className="category-name">{categoryName}</h2>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        products.map((p, i) => (
+          <tr><td>
+            { Product(p, i) }
+          </td></tr>
+        ))
+      }
+    </tbody>
+    <tfoot><tr><td>
+      <div class="footer-space" height="20px">&nbsp;</div>
+    </td></tr></tfoot>
+  </table>
 );
 
 const ToC = () => (
@@ -1238,30 +1250,7 @@ const ToC = () => (
   </table>
 )
 
-{/* <div className="table-of-content container">
-  <h2>Indice</h2>
-  <div className="toc-container">
-    {
-      categories.map((categoryName, i) => (
-        <div className="columns is-mobile">
-          <div className="column is-11">
-            <a href={`#${mkCategoryTag(categoryName)}`} className='toc-title'>{categoryName}</a>
-            {
-              products[categoryName].map(product => (
-                <div className='toc-content'>
-                  { product.name }
-                </div>
-              ))
-            }
-          </div>
-          <div className="column is-1">
-            { i }
-          </div>
-        </div>
-      ))
-    }
-  </div>
-</div> */}
+
 const Vademecum = () => {
   return categories.map((categoryName, i) => (
     <div key={i}>
