@@ -7,6 +7,13 @@ html {
     font-size: 22px;
     -webkit-print-color-adjust: exact;
 }
+
+@media print {
+    thead {
+        display: table-header-group;
+    }
+}
+
 .image {
     max-width: 500px;
     margin: auto;
@@ -41,20 +48,83 @@ html {
     padding: 0 1rem;
 }
 
+table {
+    page-break-before: always;
+}
+
+table.table th,
+table.table td {
+    padding: 0;
+    border: 0;
+}
+
+table thead {
+    display: table-header-group;
+}
+table.toc-table {
+    width: 100%;
+}
+
+table.toc-table tbody tr {
+    page-break-inside: avoid;
+}
+
+table.toc-table .toc-section {
+    padding: .4rem 1rem;
+}
+
+table.toc-table .toc-section a {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(24, 40, 72, 0.8);
+    font-size: 1.3rem;
+}
+
+table.toc-table .toc-content {
+    font-family: 'Raleway', sans-serif;
+    color: hsl(0, 0%, 33%);
+    letter-spacing: 0.02rem;
+    font-weight: 400;
+    font-size: .75rem;
+    padding-left: 1rem;
+    line-height: 1rem;
+}
+
 .toc-container {
     padding: 0 6rem;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
-.toc-container a {
-    color: #182848;
-    /* font-family: 'Raleway', sans-serif;
-    font-weight: 300; */
+.toc-container .columns.is-mobile {
+    margin-bottom: .75rem;
+    page-break-inside: avoid;
 }
 
-h2,
-h2.category-name {
+.toc-container .column.is-11,
+.toc-container .column.is-1 {
+    padding: .2rem 1rem;
+}
+
+.toc-container .toc-title,
+.toc-container .column.is-1 {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(24, 40, 72, 0.8);
+    font-size: 1.3rem;
+}
+
+.toc-container .toc-content {
+    font-family: 'Raleway', sans-serif;
+    color: hsl(0, 0%, 33%);
+    letter-spacing: 0.02rem;
+    font-weight: 400;
+    font-size: .75rem;
+    padding-left: 1rem;
+    line-height: 1rem;
+}
+
+h2 {
     background: rgb(24,40,72);
     background: linear-gradient(25deg, rgba(24,40,72,1) 0%, rgba(24,40,72,0.8) 100%);
     padding: 3rem 1rem 1rem 1rem;

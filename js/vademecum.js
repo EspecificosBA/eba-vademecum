@@ -1213,31 +1213,55 @@ const Category = (categoryName, products) => (
 );
 
 const ToC = () => (
-  <div className="table-of-content container">
-    <h2>Indice</h2>
-    <div className="toc-container">
-      {
-        categories.map((categoryName, i) => (
-          <div className="columns is-mobile">
-            <div className="column is-11">
-              <a href={`#${mkCategoryTag(categoryName)}`}>{categoryName}</a>
-              {
-                products[categoryName].map(product => (
-                  <div>
-                    { product.name }
-                  </div>
-                ))
-              }
-            </div>
-            <div className="column is-1">
-              { i }
-            </div>
+  <table className='toc-table table is-fullwidth'>
+    <thead>
+      <tr><th><h2>Indice</h2></th></tr>
+    </thead>
+    <tbody>
+    {
+      categories.map((categoryName, i) => (
+        <tr><td>
+          <div className='toc-section'>
+            <div><a href={`#${mkCategoryTag(categoryName)}`} className='toc-title'>{categoryName}</a></div>
+            {
+              products[categoryName].map(product => (
+                <div className='toc-content'>
+                  { product.name }
+                </div>
+              ))
+            }
           </div>
-        ))
-      }
-    </div>
-  </div>
+        </td></tr>
+      ))
+    }  
+    </tbody>
+  </table>
 )
+
+{/* <div className="table-of-content container">
+  <h2>Indice</h2>
+  <div className="toc-container">
+    {
+      categories.map((categoryName, i) => (
+        <div className="columns is-mobile">
+          <div className="column is-11">
+            <a href={`#${mkCategoryTag(categoryName)}`} className='toc-title'>{categoryName}</a>
+            {
+              products[categoryName].map(product => (
+                <div className='toc-content'>
+                  { product.name }
+                </div>
+              ))
+            }
+          </div>
+          <div className="column is-1">
+            { i }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div> */}
 const Vademecum = () => {
   return categories.map((categoryName, i) => (
     <div key={i}>
