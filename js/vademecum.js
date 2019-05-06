@@ -1234,7 +1234,11 @@ const ToC = () => (
       categories.map((categoryName, i) => (
         <tr><td>
           <div className='toc-section'>
-            <div><a href={`#${mkCategoryTag(categoryName)}`} className='toc-title'>{categoryName}</a></div>
+            <div>
+              <a href={`#${mkCategoryTag(categoryName)}`} className='toc-title'>{categoryName} 
+                <img src="images/arrow.png" className="toc-goto"/>
+              </a>
+            </div>
             {
               products[categoryName].map(product => (
                 <div className='toc-content'>

@@ -68,16 +68,21 @@ table thead {
     display: table-header-group;
 }
 
-
+.toc-goto {
+    position: relative;
+    width: 10px;
+    left: 10px;
+}
 table.toc-table .toc-section {
     padding: .4rem 1rem;
+    text-align: center;
 }
 
 table.toc-table .toc-section a {
     font-weight: 600;
     text-transform: uppercase;
     color: rgba(24, 40, 72, 0.8);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 table.toc-table .toc-content {
@@ -85,7 +90,7 @@ table.toc-table .toc-content {
     color: hsl(0, 0%, 33%);
     letter-spacing: 0.02rem;
     font-weight: 400;
-    font-size: .75rem;
+    font-size: .8rem;
     padding-left: 1rem;
     line-height: 1rem;
 }
