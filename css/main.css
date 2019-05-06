@@ -136,7 +136,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-h3.product-name {
+h3 {
     background-color: #435074;
     color: white;
     padding: 0.5rem 1rem;
@@ -146,7 +146,8 @@ h3.product-name {
 }
 
 .us-container,
-.product-container {
+.product-container,
+.contact-container {
     margin-bottom: 0.5rem;
 }
 
@@ -156,12 +157,14 @@ h3.product-name {
     text-align: center;
 
 }
+.contact-body,
 .product-container {
     background-color: #f5f5f5;
 }
 
 .us-body,
-.product-body {
+.product-body,
+.contact-body {
     padding: 0 1rem;
     margin-top: 0px;
 }
@@ -175,11 +178,11 @@ h3.product-name {
     margin: 0.5rem 0;
 }
 
-.product-body .section-container {
+.section-container {
     padding-bottom: 0.5rem;
 }
 
-.product-body .section-name {
+.section-name {
     font-weight: 600;
     color: #596992;
     font-size: 1.2rem;
