@@ -10,7 +10,10 @@ const Tag = (label, key, className) => (
 const Product = (product, withPrice) => (
 	<div className="container sell-product-container">
 		<div className="columns">
-			<div className="column is-10">
+			<div className="column is-2">
+				<img src={`images/_img/${product.variants[0].img || 'not-found'}.png`}/>
+			</div>
+			<div className="column is-8">
 				<h4>{ product.name }</h4>
 				<p>{ product.shortDesc || product.fullDesc}</p>
 				<div className="tags">
@@ -72,7 +75,6 @@ class VademecumDomiciliario extends React.Component {
 						[ "Hombres", "hombres" ],
 						[ "Protección Intensiva", "proteccion-intensiva" ],
 						[ "Monodosis", "monodosis" ],
-						[ "Activos Concentrados", "activos-concentrados" ],
 						[ "Protección Solar", "proteccion-solar" ]
 					],
           products: null,
@@ -80,8 +82,21 @@ class VademecumDomiciliario extends React.Component {
     }
 
     componentDidMount() {
-			fetch('data/products-home.json')
+			fetch('data/products-by-category.json')
 				.then(response => response.json())
+				.then(data => {
+					const categories = Object.keys(data);
+					return categories.reduce((products, categoryName) => {
+						const filtered = data[categoryName].filter(product => {
+							const valid = product.variants.filter(v => v.code < 2000);
+							return valid.length || product.category.includes('Protección Solar'); // Sunscreens are also required for this Vademecum
+						});
+						return {
+							...products,
+							[categoryName]: filtered
+						}
+					}, {})
+				})
 				.then(data => {
 				this.setState({
 						products: data,

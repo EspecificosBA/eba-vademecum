@@ -49,7 +49,7 @@ html {
 }
 
 table {
-    page-break-before: always;
+    /* page-break-before: always; */
     width: 100%;
 }
 
