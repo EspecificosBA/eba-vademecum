@@ -114,10 +114,6 @@ const domContainer = document.querySelector('#vademecum');
 const LABEL = 0,
       TAG = 1;
 
-fetch('data/products-by-category.json').then(response => response.json()).then(data => {
-  console.log('data', data);
-});
-
 class VademecumData extends React.Component {
   constructor(props) {
     super(props);

@@ -19,9 +19,12 @@
     "@babel/preset-es2015": "^7.0.0-beta.53"
   },
   "scripts": {
-    "start": "./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
-    "build": "./node_modules/.bin/babel js/vademecum.js --out-dir lib",
-    "pdf": "npm run build && node pdf-maker.js"
+    "prof-start": "./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
+    "prof-build": "./node_modules/.bin/babel js/vademecum.js --out-dir lib",
+    "prof-pdf": "npm run prof-build && node pdf-maker.js",
+    "dom-start": "./node_modules/.bin/babel js/vademecum-domiciliario.js --watch --out-file lib/vademecum-domiciliario.js",
+    "dom-build": "./node_modules/.bin/babel js/vademecum-domiciliario.js --out-dir lib",
+    "dom-pdf": "npm run dom-build && node pdf-domiciliario.js"
   },
   "repository": {
     "type": "git",
