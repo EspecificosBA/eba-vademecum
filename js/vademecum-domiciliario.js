@@ -40,10 +40,10 @@ const ProductList = (products, categories) => (
 	<div>
 		{
 			categories.map(category => (
-				<table id={category[TAG]}>
+				<table id={category[TAG]} className="domi-prod">
 					<thead>
 						<tr><th>
-							<h2>{category[LABEL]}</h2>
+							<h2 className="domi-h2">{category[LABEL]}</h2>
 						</th></tr>
 					</thead>
 					<tbody>

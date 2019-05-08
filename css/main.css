@@ -214,7 +214,7 @@ tr:last-child td .sell-product-container {
     border: 0;
 }
 .sell-product-container {
-    padding: 1rem;
+    padding: .5rem 1rem;
     border-bottom: 1px solid #CCCCCC;
 }
 
@@ -224,6 +224,10 @@ tr:last-child td .sell-product-container {
 
 .sell-product-container .columns {
     align-items: center;
+}
+
+.sell-product-container:last-child {
+    margin-bottom: 1rem;
 }
 
 .price-tag {
@@ -241,6 +245,7 @@ tr:last-child td .sell-product-container {
     font-size: 1rem;
     padding: 0 .2rem;
 }
+
 h4 {
     color: #004c8c;
     font-weight: 600;
@@ -254,4 +259,18 @@ h4 {
     font-family: 'Raleway', sans-serif;
     font-size: .75rem;
     text-align: center;
+}
+
+table.domi-prod:not(:first-child) {
+    page-break-before: unset;
+    width: 100%;
+}
+
+table.domi-prod {
+    page-break-inside: avoid;
+}
+
+h2.domi-h2 {
+    padding: 1rem;
+    margin-bottom: 0;
 }
