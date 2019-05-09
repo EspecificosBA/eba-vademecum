@@ -28,6 +28,7 @@
 					"img": "complex-bio-250"
 				}
 			],
+			"img": "complex-bio",
 			"name": "Complex Bio Vitamins A+E+C"
 		},
 		{
@@ -77,7 +78,8 @@
 					"code": 1003,
 					"content": "50 ml.",
 					"price": 250,
-					"sellPrice": 500
+					"sellPrice": 500,
+					"img": "audace-50"
 				},
 				{
 					"code": 2003,
@@ -87,7 +89,8 @@
 					"img": "audace-120"
 				}
 			],
-			"name": "Audace - Glico Activo"
+			"name": "Audace - Glico Activo",
+			"img": "audace"
 		},
 		{
 			"category": [
@@ -106,7 +109,7 @@
 					"content": "50 ml.",
 					"price": 210,
 					"sellPrice": 420,
-					"img": ""
+					"img": "bisome-retinol-50"
 				},
 				{
 					"code": 2004,
@@ -116,7 +119,8 @@
 					"img": "bisome-retinol-120"
 				}
 			],
-			"name": "Bisome Retinol - Fluido Facial"
+			"name": "Bisome Retinol - Fluido Facial",
+			"img": "bisome-retinol"
 		},
 		{
 			"category": [
@@ -138,7 +142,7 @@
 				"content": "30 ml.",
 				"price": 280,
 				"sellPrice": 560,
-				"img": ""
+				"img": "repair-eye-contour-30"
 			}],
 			"name": "Repair Eye Contour"
 		},
@@ -160,7 +164,8 @@
 					"code": 1007,
 					"content": "50 ml.",
 					"price": 220,
-					"sellPrice": 440
+					"sellPrice": 440,
+					"img": "uvit-serum-50"
 				},
 				{
 					"code": 2007,
@@ -170,6 +175,7 @@
 					"img": "uvit-serum-120"
 				}
 			],
+			"img": "uvit-serum",
 			"name": "Uvit Serum Defense"
 		},
 		{
@@ -189,16 +195,19 @@
 					"code": 1011,
 					"content": "50 ml.",
 					"price": 180,
-					"sellPrice": 360
+					"sellPrice": 360,
+					"img": "acne-skin-50"
 				},
 				{
 					"code": 2011,
 					"content": "200 ml.",
 					"price": 320,
-					"sellPrice": ""
+					"sellPrice": "",
+					"img": "acne-skin-200"
 				}
 			],
-			"name": "Acne Skin Cleans"
+			"name": "Acne Skin Cleans",
+			"img": "acne-skin"
 		},
 		{
 			"category": [
@@ -253,7 +262,8 @@
 					"img": "whitening-200"
 				}
 			],
-			"name": "Whitening Cream"
+			"name": "Whitening Cream",
+			"img": "whitening"
 		},
 		{
 			"category": [
@@ -284,7 +294,8 @@
 					"img": "sensitive-200"
 				}
 			],
-			"name": "Sensitive Cream"
+			"name": "Sensitive Cream",
+			"img": "sensitive"
 		}
 	],
 	"Higiene": [{
@@ -313,7 +324,8 @@
 					"img": "emulsion-500"
 				}
 			],
-			"name": "Emulsión de Higiene"
+			"name": "Emulsión de Higiene",
+			"img": "emulsion"
 		},
 		{
 			"category": [
@@ -475,7 +487,8 @@
 					"img":"hi-serum-120"
 				}
 			],
-			"name": "Hydra Intensive Serum"
+			"name": "Hydra Intensive Serum",
+			"img": "hi-serum"
 		},
 		{
 			"category": [
@@ -506,7 +519,8 @@
 					"img": "hi-tonico-120"
 				}
 			],
-			"name": "Hydra Intensive Tonico"
+			"name": "Hydra Intensive Tonico",
+			"img": "hi-tonico"
 		}
 	],
 	"Hombres": [{
