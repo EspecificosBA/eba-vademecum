@@ -9,16 +9,20 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "dotenv": "^8.0.0",
     "puppeteer": "^1.15.0",
     "puppeteer-core": "^1.15.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.4",
-    "@babel/preset-es2015": "^7.0.0-beta.53"
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3"
   },
   "scripts": {
+    "start": "node src/index.js",
     "prof-start": "./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
     "prof-build": "./node_modules/.bin/babel js/vademecum.js --out-dir lib",
     "prof-pdf": "npm run prof-build && node pdf-maker.js",

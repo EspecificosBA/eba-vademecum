@@ -2,6 +2,31 @@
 
 const dom = React.createElement;
 
+const CONFIG = {
+  profA: {
+      contactInformation: true,
+      productFilter: products => products,
+      prices: false,
+  },
+  profB: {
+      contactInformation: false,
+      productFilter: products => products,
+      prices: false,
+  },
+  domA: {
+      contactInformation: false,
+      productFilter: products => products,
+      prices: true,
+  },
+  domB: {
+      contactInformation: false,
+      productFilter: products => products,
+      prices: false,
+  },
+};
+
+console.log(process.env.mode, CONFIG[process.env.mode]);
+
 const Tag = (label, key, className) => (
   <span className={`tag ${className||''}`} key={key}>{label}</span>
 );
@@ -160,4 +185,3 @@ class VademecumData extends React.Component {
 }
 
 ReactDOM.render(dom(VademecumData), domContainer);
-

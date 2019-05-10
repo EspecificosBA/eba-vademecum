@@ -20,4 +20,7 @@ const presets = [
     ]
   ];
   
-  module.exports = { presets };
+  const plugins = [
+    "transform-inline-environment-variables"
+  ]
+  module.exports = { presets, plugins };
