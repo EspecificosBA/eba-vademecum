@@ -3,29 +3,53 @@
 const dom = React.createElement;
 
 const CONFIG = {
-  profA: {
+  "prof-a": {
       contactInformation: true,
       productFilter: products => products,
       prices: false,
+      categories: [
+        [ "Higiene", "higiene" ],
+        [ "Máscaras", "mascaras" ],
+        [ "Ácido Hialurónico", "acido-hialuronico" ],
+        [ "Peeling", "peeling" ],
+        [ "Corporales", "corporales" ],
+        [ "Hombres", "hombres" ],
+        [ "Protección Intensiva", "proteccion-intensiva" ],
+        [ "Monodosis", "monodosis" ],
+        [ "Activos Concentrados", "activos-concentrados" ],
+        [ "Protección Solar", "proteccion-solar" ]
+      ]
   },
-  profB: {
+  "prof-b": {
       contactInformation: false,
       productFilter: products => products,
       prices: false,
+      categories: [
+        [ "Higiene", "higiene" ],
+        [ "Máscaras", "mascaras" ],
+        [ "Ácido Hialurónico", "acido-hialuronico" ],
+        [ "Peeling", "peeling" ],
+        [ "Corporales", "corporales" ],
+        [ "Hombres", "hombres" ],
+        [ "Protección Intensiva", "proteccion-intensiva" ],
+        [ "Monodosis", "monodosis" ],
+        [ "Activos Concentrados", "activos-concentrados" ],
+        [ "Protección Solar", "proteccion-solar" ]
+      ]
   },
-  domA: {
+  "dom-a": {
       contactInformation: false,
       productFilter: products => products,
       prices: true,
   },
-  domB: {
+  "dom-a": {
       contactInformation: false,
       productFilter: products => products,
       prices: false,
   },
 };
 
-console.log(process.env.mode, CONFIG[process.env.mode]);
+console.log(process.env.MODE, CONFIG[process.env.MODE]);
 
 const Tag = (label, key, className) => (
   <span className={`tag ${className||''}`} key={key}>{label}</span>
@@ -124,7 +148,8 @@ const ToC = (categories, products) => (
 )
 
 
-const Vademecum = (categories, products) => {
+const Vademecum = (categories, products, prices) => {
+  console.log(prices);
   return categories.map((categoryName, i) => (
     <div key={i}>
       {
@@ -142,19 +167,10 @@ const LABEL = 0,
 class VademecumData extends React.Component {
   constructor(props) {
     super(props);
+    const config = CONFIG[process.env.MODE];
     this.state = {
-      categories: [
-        [ "Higiene", "higiene" ],
-        [ "Máscaras", "mascaras" ],
-        [ "Ácido Hialurónico", "acido-hialuronico" ],
-        [ "Peeling", "peeling" ],
-        [ "Corporales", "corporales" ],
-        [ "Hombres", "hombres" ],
-        [ "Protección Intensiva", "proteccion-intensiva" ],
-        [ "Monodosis", "monodosis" ],
-        [ "Activos Concentrados", "activos-concentrados" ],
-        [ "Protección Solar", "proteccion-solar" ]
-      ],
+      config: config,
+      categories: config.categories,
       products: null,
     }
   }
@@ -162,6 +178,7 @@ class VademecumData extends React.Component {
   componentDidMount() {
     fetch('data/products-by-category.json')
       .then(response => response.json())
+      .then(this.state.config.productFilter)
       .then(data => {
         this.setState({
           products: data,
@@ -170,12 +187,12 @@ class VademecumData extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.state;
+    const { categories, products, config } = this.state;
     if (products) {
       return ( 
         <div>
           { ToC(categories, products) }
-          { Vademecum(categories, products) }
+          { Vademecum(categories, products, config.prices) }
         </div>
       )
     } else {

@@ -9,6 +9,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
     "puppeteer": "^1.15.0",
     "puppeteer-core": "^1.15.0"
@@ -22,7 +23,10 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.3"
   },
   "scripts": {
-    "start": "node src/index.js",
+    "start:prof-a": "cross-env MODE=prof-a ./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
+    "start:prof-b": "cross-env MODE=prof-b ./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
+    "start:dom-a": "cross-env MODE=dom-a ./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
+    "start:dom-b": "cross-env MODE=dom-b ./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
     "prof-start": "./node_modules/.bin/babel js/vademecum.js --watch --out-file lib/vademecum.js",
     "prof-build": "./node_modules/.bin/babel js/vademecum.js --out-dir lib",
     "prof-pdf": "npm run prof-build && node pdf-maker.js",
