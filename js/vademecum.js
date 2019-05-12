@@ -49,10 +49,8 @@ const CONFIG = {
   },
 };
 
-console.log(process.env.MODE, CONFIG[process.env.MODE]);
-
 const Tag = (label, key, className) => (
-  <span className={`tag ${className||''}`} key={key}>{label}</span>
+  <div className={`chip ${className||''}`} key={key}>{label}</div>
 );
 
 const Section = (title, paragraph, prepend) => (
@@ -60,7 +58,7 @@ const Section = (title, paragraph, prepend) => (
     <h4 className="section-name">
       { title }
     </h4>
-    <p className="section-body">
+    <p className="section-body" lang="es">
       { prepend }{ paragraph }
     </p>
   </div>
@@ -68,13 +66,25 @@ const Section = (title, paragraph, prepend) => (
 
 const Product = (product, key) => (
   <div className="product-container">
-    <h3 className="product-name">
-      {product.name}
-    </h3>
-    <div className="product-body">
-      <p className="product-short-desc">
-        {product.shortDesc}
-      </p>
+    <div className="row valign-wrapper">
+      <div class="col s2">
+        <img 
+          src={`images/_img/${product.img || product.variants[0].img}.png`}
+          className="responsive-img"
+        />
+      </div>
+      <div class="col s10">
+        <h4 className="product-name">
+          {product.name}
+        </h4>
+        <div className="product-body">
+          <p className="product-short-desc" lang="es">
+            {product.shortDesc}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
       {
         Section('Descripción', product.fullDesc)
       }
@@ -83,77 +93,64 @@ const Product = (product, key) => (
       }
       {
         product.actives &&
-          Section(
-            'Activos',
-            product.actives.join(', '),
-            product.ph && Tag(`PH ${product.ph}`, null, 'is-ph')
-          )
+        Section(
+          '', 
+          product.actives.map(p => Tag(p)),
+          product.ph && Tag(`PH ${product.ph}`, null, 'is-ph')
+        )
       }
     </div>
+    <div className="divider"></div>
   </div>
 );
 
-const Category = (category, products) => (
-  <table className="category-container table is-fullwidth">
-    <thead className="category" id={category[TAG]}>
-      <tr>
-        <th>
-          <h2 className="category-name">{category[LABEL]}</h2>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
+const Category = (category, products, prices) => (
+  <section id={category[TAG]} className="container">
+    <h2 className="category-name">{category[LABEL]}</h2>
+    <div className="collection">
       {
         products.map((p, i) => (
-          <tr><td>
+          <div className="collection-item">
             { Product(p, i) }
-          </td></tr>
+          </div>
         ))
       }
-    </tbody>
-    <tfoot><tr><td>
-      <div class="footer-space" height="20px">&nbsp;</div>
-    </td></tr></tfoot>
-  </table>
+    </div>
+  </section>
 );
 
 const ToC = (categories, products) => (
-  <table className='toc-table table is-fullwidth'>
-    <thead>
-      <tr><th><h2>Indice</h2></th></tr>
-    </thead>
-    <tbody>
-    {
-      categories.map((category, i) => (
-        <tr><td>
-          <div className='toc-section'>
+  <section id="eba-toc" className="container">
+    <h2 className="pagebreak">Indice</h2>
+    <div class="col s8">
+      {
+        categories.map((category, i) => (
+          <div>
             <div>
-              <a href={`#${category[TAG]}`} className='toc-title'>{category[LABEL]} 
-                <img src="images/arrow.png" className="toc-goto"/>
+              <a href={`#${category[TAG]}`}> 
+                <h5>{category[LABEL]} <i className="material-icons">chevron_right</i></h5>
               </a>
             </div>
             {
               products[category[LABEL]].map(product => (
-                <div className='toc-content'>
+                <div>
                   { product.name }
                 </div>
               ))
             }
           </div>
-        </td></tr>
-      ))
-    }  
-    </tbody>
-  </table>
+        ))
+      }
+    </div>
+  </section>
 )
 
 
 const Vademecum = (categories, products, prices) => {
-  console.log(prices);
   return categories.map((categoryName, i) => (
     <div key={i}>
       {
-        Category(categoryName, products[categoryName[LABEL]])
+        Category(categoryName, products[categoryName[LABEL]], prices)
       }
     </div>
   ))

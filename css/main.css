@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
     color: #182F40;
@@ -49,7 +49,6 @@ html {
 }
 
 table {
-    /* page-break-before: always; */
     width: 100%;
 }
 
@@ -273,4 +272,102 @@ table.domi-prod {
 h2.domi-h2 {
     padding: 1rem;
     margin-bottom: 0;
+} */
+
+
+body {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+#eba-cover {
+    background-color: #0C2545;
+    color: white;
+    text-align: left;
+}
+
+#eba-about {
+    text-align: justify;
+}
+
+.pagebreak {
+    page-break-before: always;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #0C2545;
+    position: relative;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+h2::before {
+    background: #5A91C4;
+    content: '';
+    display: block;
+    height: 5rem;
+    left: -80px;
+    position: absolute;
+    top: -1rem;
+    width: 4rem;
+    z-index: -1;
+}
+
+h3 {
+    text-align: center;
+}
+
+h3::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    background-color: #5A91C4;
+    margin-top: .5rem;
+}
+
+h4 {
+    margin: 1rem 0 .5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h4.product-name {
+    color: #5A91C4;
+    font-size: 1.8rem;
+}
+
+p {
+    margin: .5rem 0 1rem 0;
+}
+
+p.product-short-desc {
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    color: #0C2545;
+}
+
+.product-short-desc,
+.section-body {
+    text-align: justify;
+}
+.collection {
+    border: 0;
+}
+
+.product-container {
+    page-break-inside: avoid;
+}
+
+.product-container
+.row {
+    margin-bottom: 1rem;
+}
+.collection
+.collection-item {
+    padding: 0;
+    line-height: 1.8rem;
 }
