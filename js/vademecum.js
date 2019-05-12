@@ -86,7 +86,7 @@ const Product = (product, key) => (
     </div>
     <div>
       {
-        Section('Descripción', product.fullDesc)
+        product.fullDesc && Section('Descripción', product.fullDesc)
       }
       {
         product.application && Section('Aplicación', product.application)
@@ -214,7 +214,7 @@ const ContactInformation = () => (
               Dirección
             </h4>
             <p class="section-body">
-              Luis Cordero 1254, Cuenca, Azuay
+              Av. Felipe II s/n, Via Mall del Río
             </p>
           </div>
           <div class="section-container">
@@ -222,8 +222,8 @@ const ContactInformation = () => (
               Teléfono
             </h4>
             <p class="section-body">
-              (+593)07283-5550
-              (+593)07284-1207
+              (+593)07245-5143
+              (+593)07288-6258
             </p>
           </div>
           <div class="section-container">
@@ -231,7 +231,7 @@ const ContactInformation = () => (
               Email
             </h4>
             <p class="section-body">
-              casamonickaventas@yahoo.com
+              kasanacorp@hotmail.com
             </p>
           </div>
         </div>

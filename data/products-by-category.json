@@ -393,9 +393,87 @@
 				"img": "specific-mask-250"
 			}],
 			"name": "Specific Mask"
+		},
+		{
+			"category": ["Máscaras", "Peeling"],
+			"shortDesc": "Multifuncional Máscara peeling de belleza correctiva, indicada específicamente para el tratamiento de irregularidades pigmentarias en sistemas de rejuvenecimiento facial.",
+			"fullDesc": "Rica ácido mandélico y arbutina, mejora el tono y la textura de la piel, aclara, calma e hidrata, minimizando poros. Contiene taninos de efecto astringente, que ayudan a reducir la inflamación antimicrobiana. Refuerza la función barrera, con excelente tolerancia y eficacia en el tratamiento de las pieles sensibles, mejorando el tono y la luminosidad de la piel.",
+			"application": "Dejar actuar durante quince minutos, de acuerdo a las indicaciones del protocolo específico y retirar.",
+			"actives": [
+				"Mandélico",
+				"UVA URSI"
+			],
+			"ph": "3,5",
+			"variants": [{
+				"code": 2042,
+				"content": "200 ml",
+				"price": 370,
+				"sellPrice": ""
+			}],
+			"name": "Dynamic DO ALL – 1",
+			"img": "dda-1"
+		},
+		{
+			"category": ["Máscaras", "Peeling"],
+			"shortDesc": "Multifuncional Máscara peeling de rejuvenecimiento, que une tres generaciones de hidroxiácidos, ácido Glicólico, Gluconolactona y Lactobiónico. Mejora la renovación celular con alta tolerancia y eficacia en el tratamiento de las pieles sensibles. Contribuye a revertir los signos del fotoenvejecimiento cutáneo.",
+			"fullDesc": "Fortalece la función barrera de la piel, debido a su acción estimulante sobre la regeneración epidérmica y sus propiedades hidratantes, higroscópicas y antioxidantes. Estimula el recambio celular. Suaviza la piel. Disminuye el tamaño del poro. Disminuye las arrugas. Mejora la elasticidad, firmeza y luminosidad de la piel. Mejora la tonalidad. Hidrata.",
+			"application": "Puede utilizarse de forma independiente o en sinergia con activos tópicos en procedimientos dermocosmiátricos para suavizar, acondicionar y compensar la piel. Dejar actuar durante quince minutos, de acuerdo a las indicaciones del protocolo específico y retirar.",
+			"actives": [
+				"Lactobiónico",
+				"Glicólico",
+				"Gluconolactona"
+			],
+			"ph": "3,5",
+			"variants": [{
+				"code": 2043,
+				"content": "200 ml",
+				"price": 370,
+				"sellPrice": ""
+			}],
+			"name": "Dynamic DO ALL – 2",
+			"img": "dda-2"
 		}
 	],
 	"Peeling": [{
+			"category": ["Máscaras", "Peeling"],
+			"shortDesc": "Multifuncional Máscara peeling de belleza correctiva, indicada específicamente para el tratamiento de irregularidades pigmentarias en sistemas de rejuvenecimiento facial.",
+			"fullDesc": "Rica ácido mandélico y arbutina, mejora el tono y la textura de la piel, aclara, calma e hidrata, minimizando poros. Contiene taninos de efecto astringente, que ayudan a reducir la inflamación antimicrobiana. Refuerza la función barrera, con excelente tolerancia y eficacia en el tratamiento de las pieles sensibles, mejorando el tono y la luminosidad de la piel.",
+			"application": "Dejar actuar durante quince minutos, de acuerdo a las indicaciones del protocolo específico y retirar.",
+			"actives": [
+				"Mandélico",
+				"UVA URSI"
+			],
+			"ph": "3,5",
+			"variants": [{
+				"code": 2042,
+				"content": "200 ml",
+				"price": 370,
+				"sellPrice": ""
+			}],
+			"name": "Dynamic DO ALL – 1",
+			"img": "dda-1"
+		},
+		{
+			"category": ["Máscaras", "Peeling"],
+			"shortDesc": "Multifuncional Máscara peeling de rejuvenecimiento, que une tres generaciones de hidroxiácidos, ácido Glicólico, Gluconolactona y Lactobiónico. Mejora la renovación celular con alta tolerancia y eficacia en el tratamiento de las pieles sensibles. Contribuye a revertir los signos del fotoenvejecimiento cutáneo.",
+			"fullDesc": "Fortalece la función barrera de la piel, debido a su acción estimulante sobre la regeneración epidérmica y sus propiedades hidratantes, higroscópicas y antioxidantes. Estimula el recambio celular. Suaviza la piel. Disminuye el tamaño del poro. Disminuye las arrugas. Mejora la elasticidad, firmeza y luminosidad de la piel. Mejora la tonalidad. Hidrata.",
+			"application": "Puede utilizarse de forma independiente o en sinergia con activos tópicos en procedimientos dermocosmiátricos para suavizar, acondicionar y compensar la piel. Dejar actuar durante quince minutos, de acuerdo a las indicaciones del protocolo específico y retirar.",
+			"actives": [
+				"Lactobiónico",
+				"Glicólico",
+				"Gluconolactona"
+			],
+			"ph": "3,5",
+			"variants": [{
+				"code": 2043,
+				"content": "200 ml",
+				"price": 370,
+				"sellPrice": ""
+			}],
+			"name": "Dynamic DO ALL – 2",
+			"img": "dda-2"
+		},
+		{
 			"category": [
 				"Peeling"
 			],
@@ -405,7 +483,7 @@
 			"actives": [
 				"Acido Salicílico",
 				"Acido Láctico",
-				"Resorcina"
+				"Acido Málico"
 			],
 			"ph": "3,5",
 			"variants": [{
@@ -1112,6 +1190,44 @@
 				"img": "espuma-7"
 			}],
 			"name": "Espuma ACTIVE 7"
+		},
+		{
+			"category": ["Corporales"],
+			"shortDesc": "Silhouette Perfect Program. Complejo de activación global Anticelulítico intensivo",
+			"fullDesc": "Crema corporal. Ayuda a disminuir los simbolos visibles de la celulitis gracias a su combinacion especifica de Garcinia Cambogia, cafeina y carnitina",
+			"actives": [
+				"Garcinia Cambogia",
+				"Cafeína",
+				"Carnitina"
+			],
+			"application":"Aplicar mediante masaje o posterior al ejercicio físico. Para una acción sinérgica perfecta combinar con espuma S.O.S Sculpt.",
+			"variants": [{
+				"code": 2047,
+				"content": "500ml.",
+				"price": 350,
+				"sellPrice": 700
+			}],
+			"name": "Dermo Corp, Crema de Masajes",
+			"img":"masajes-dermo-corp"
+		},
+		{
+			"category": ["Corporales"],
+			"shortDesc": "Silhouette Slimming Program. Complejo de activación global anti-adipogénesis y anti-angiogénesis",
+			"fullDesc": "Crema corporal. Ayuda a disminuir los simbolos visibles de la celulitis gracias a su combinacion especifica de Adipoless, cafeina y carnitina",
+			"actives": [
+				"Adipoless",
+				"Cafeina",
+				"Carnitina"	
+			],
+			"application":"Aplicar mediante masaje o posterior al ejercicio físico. Para una acción sinérgica perfecta combinar con espuma S.O.S Extreme.",
+			"variants": [{
+				"code": 2048,
+				"content": "500ml.",
+				"price": 360,
+				"sellPrice": 720
+			}],
+			"name": "Lift Corp, Crema de Masajes",
+			"img": "masajes-lift-corp"
 		}
 	]
 }
