@@ -301,7 +301,7 @@ h2 {
     color: #0C2545;
     position: relative;
     font-size: 2.5rem;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
 
 h2::before {
@@ -309,7 +309,7 @@ h2::before {
     content: '';
     display: block;
     height: 5rem;
-    left: -80px;
+    left: -70px;
     position: absolute;
     top: -1rem;
     width: 4rem;
@@ -335,7 +335,7 @@ h4 {
     font-weight: 600;
 }
 
-h4.product-name {
+h4.primary-title {
     color: #5A91C4;
     font-size: 1.8rem;
 }
@@ -348,6 +348,7 @@ p.product-short-desc {
     font-family: 'Raleway', sans-serif;
     font-style: italic;
     color: #0C2545;
+    margin-bottom: 0;
 }
 
 .product-short-desc,
@@ -364,10 +365,21 @@ p.product-short-desc {
 
 .product-container
 .row {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
+
+#higiene h2,
+#mascaras h2,
+#acido-hialuronico h2 {
+    page-break-before: always;
+}
+
 .collection
 .collection-item {
     padding: 0;
     line-height: 1.8rem;
+}
+
+.container {
+    width: 90%;
 }

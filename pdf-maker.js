@@ -7,9 +7,12 @@ const puppeteer = require('puppeteer');
   //await page.emulateMedia('screen');
   await page.pdf({
       path: 'pdf/vademecum-profesional-mobile.pdf',
-      // height: '1450',
-      height: 640,
+      height: '1450',
       printBackground: true,
+      margin: {
+        top: '16px',
+        bottom: '16px'
+      }
     });
     // displayHeaderFooter 
   await browser.close();

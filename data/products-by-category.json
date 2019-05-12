@@ -1035,31 +1035,6 @@
 			"category": [
 				"Corporales"
 			],
-			"shortDesc": "Tratamiento reafirmante con alto poder nutritivo que, por su composición rica en activos compensadores, mejora en firmeza y elasticidad de la piel, recuperando toda su vitalidad y energía",
-			"fullDesc": "Espuma corporal, específicamente formulada para potenciar el tratamiento reductor, anticelulítico y tonificante corporal. Ayuda a eliminar el aspecto visible de la celulitis, mejora la tonicidad de los tejidos, disminuye la sensación de piernas cansadas. Reequilibra a la piel en oligoelementos, minerales, aminoácidos y proteínas. Piel más lisa, firme, elástica, suave y luminosa. Puede utilizarse también como apoyo domiciliario",
-			"actives": [
-				"Cafeína",
-				"Centella Asiática",
-				"Acido Lipoico",
-				"Fosfatidilcolina",
-				"Espirulina",
-				"Vitamina C Liposomada",
-				"Oligoelementos marinos + Zn + CU"
-			],
-			"application": "En gabinete, aplicar luego del Scrub, en sinergia con activos concentrados, Centella Asiática, Cafeina, Fosfatidilcolina. Puede combinarse con aparatología. Apoyo domiciliario: Aplicar antes de hacer ejercicio y después de ducharse. Indicada para todo tipo de piel.",
-			"variants": [{
-				"code": 1049,
-				"content": "160 ml.",
-				"price": 290,
-				"sellPrice": 580,
-				"img": "espuma-7"
-			}],
-			"name": "Espuma ACTIVE 7"
-		},
-		{
-			"category": [
-				"Corporales"
-			],
 			"shortDesc": "",
 			"fullDesc": "Strialess Cell2Cell prevención y corrección, ayuda a reforzar la elasticidad. Renovación celular y flexibilidad. Mejora el aspecto visible de la piel",
 			"actives": [
@@ -1112,6 +1087,31 @@
 				"img": "sos-extreme"
 			}],
 			"name": "S.O.S Extreme"
+		},
+		{
+			"category": [
+				"Corporales"
+			],
+			"shortDesc": "Tratamiento reafirmante con alto poder nutritivo que, por su composición rica en activos compensadores, mejora en firmeza y elasticidad de la piel, recuperando toda su vitalidad y energía",
+			"fullDesc": "Espuma corporal, específicamente formulada para potenciar el tratamiento reductor, anticelulítico y tonificante corporal. Ayuda a eliminar el aspecto visible de la celulitis, mejora la tonicidad de los tejidos, disminuye la sensación de piernas cansadas. Reequilibra a la piel en oligoelementos, minerales, aminoácidos y proteínas. Piel más lisa, firme, elástica, suave y luminosa. Puede utilizarse también como apoyo domiciliario",
+			"actives": [
+				"Cafeína",
+				"Centella Asiática",
+				"Acido Lipoico",
+				"Fosfatidilcolina",
+				"Espirulina",
+				"Vitamina C Liposomada",
+				"Oligoelementos marinos + Zn + CU"
+			],
+			"application": "En gabinete, aplicar luego del Scrub, en sinergia con activos concentrados, Centella Asiática, Cafeina, Fosfatidilcolina. Puede combinarse con aparatología. Apoyo domiciliario: Aplicar antes de hacer ejercicio y después de ducharse. Indicada para todo tipo de piel.",
+			"variants": [{
+				"code": 1049,
+				"content": "160 ml.",
+				"price": 290,
+				"sellPrice": 580,
+				"img": "espuma-7"
+			}],
+			"name": "Espuma ACTIVE 7"
 		}
 	]
 }

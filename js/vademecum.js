@@ -74,7 +74,7 @@ const Product = (product, key) => (
         />
       </div>
       <div class="col s10">
-        <h4 className="product-name">
+        <h4 className="primary-title">
           {product.name}
         </h4>
         <div className="product-body">
@@ -156,6 +156,93 @@ const Vademecum = (categories, products, prices) => {
   ))
 }
 
+const ContactInformation = () => (
+  <section id="contact-information">
+    <div className="container">
+      <h2 class="pagebreak">Contacto</h2>
+
+      <div class="collection">
+        <div class="collection-item">
+          <h4 className="primary-title">Argentina</h4>
+          <div class="section-container">
+            <h4 class="section-name">
+              Dirección
+            </h4>
+            <p class="section-body">
+              Leopoldo Marechal 914, Ciudad Autónoma de Buenos Aires
+            </p>
+          </div>
+          <div class="section-container">
+            <h4 class="section-name">
+              Telefono
+            </h4>
+            <p class="section-body">
+              (+5411) 4139-6860/1
+            </p>
+          </div>
+          <div class="section-container">
+            <h4 class="section-name">
+              Email
+            </h4>
+            <p class="section-body">
+              consultas@especificosba.com.ar
+            </p>
+          </div>
+        </div>
+
+        <div className="collection-item">
+          <h4 className="primary-title">México</h4>
+          <div class="section-container">
+            <h4 class="section-name">
+              Teléfono
+            </h4>
+            <p class="section-body">
+              (+5255)4170-8856
+            </p>
+          </div>
+          <div class="section-container">
+            <h4 class="section-name">
+              Email
+            </h4>
+            <p class="section-body">
+              contactos@skin-connect.com.mx
+            </p>
+          </div>
+        </div>
+
+        <div className="collection-item">
+          <h4 className="primary-title">Ecuador</h4>
+          <div class="section-container">
+            <h4 class="section-name">
+              Dirección
+            </h4>
+            <p class="section-body">
+              Luis Cordero 1254, Cuenca, Azuay
+            </p>
+          </div>
+          <div class="section-container">
+            <h4 class="section-name">
+              Teléfono
+            </h4>
+            <p class="section-body">
+              (+593)07283-5550
+              (+593)07284-1207
+            </p>
+          </div>
+          <div class="section-container">
+            <h4 class="section-name">
+              Email
+            </h4>
+            <p class="section-body">
+              casamonickaventas@yahoo.com
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+)
 const domContainer = document.querySelector('#vademecum');
 
 const LABEL = 0,
@@ -170,6 +257,7 @@ class VademecumData extends React.Component {
       categories: config.categories,
       products: null,
     }
+    console.log(config);
   }
 
   componentDidMount() {
@@ -185,11 +273,13 @@ class VademecumData extends React.Component {
 
   render() {
     const { categories, products, config } = this.state;
+    console.log(config.contactInformation);
     if (products) {
       return ( 
         <div>
           { ToC(categories, products) }
           { Vademecum(categories, products, config.prices) }
+          { config.contactInformation && ContactInformation() }
         </div>
       )
     } else {
