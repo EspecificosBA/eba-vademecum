@@ -121,26 +121,24 @@ const Category = (category, products, prices) => (
 const ToC = (categories, products) => (
   <section id="eba-toc" className="container">
     <h2 className="pagebreak">Indice</h2>
-    <div class="col s8">
-      {
-        categories.map((category, i) => (
-          <div>
+      <div className="">
+        {
+          categories.map((category, i) => (
             <div>
-              <a href={`#${category[TAG]}`}> 
-                <h5>{category[LABEL]} <i className="material-icons">chevron_right</i></h5>
-              </a>
+              <div>
+                <a href={`#${category[TAG]}`}> 
+                  <h5>{category[LABEL]} <i className="material-icons">chevron_right</i></h5>
+                </a>
+              </div>
+              <div>
+                {
+                  products[category[LABEL]].map(product => Tag(product.name, null, 'toc-tag'))
+                }
+              </div>
             </div>
-            {
-              products[category[LABEL]].map(product => (
-                <div>
-                  { product.name }
-                </div>
-              ))
-            }
-          </div>
-        ))
-      }
-    </div>
+          ))
+        }
+      </div>
   </section>
 )
 
