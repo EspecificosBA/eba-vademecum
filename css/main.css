@@ -370,7 +370,11 @@ p.product-short-desc {
 
 #higiene h2,
 #mascaras h2,
-#acido-hialuronico h2 {
+#acido-hialuronico h2,
+#hombres h2,
+#proteccion-intensiva h2,
+#monodosis h2,
+#proteccion-solar h2 {
     page-break-before: always;
 }
 

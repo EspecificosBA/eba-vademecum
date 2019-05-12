@@ -100,7 +100,6 @@ const Product = (product, key) => (
         )
       }
     </div>
-    <div className="divider"></div>
   </div>
 );
 
