@@ -10,7 +10,6 @@ const puppeteer = require('puppeteer');
       height: '1450',
       printBackground: true,
       margin: {
-        top: '32px'
       }
     });
     // displayHeaderFooter 
