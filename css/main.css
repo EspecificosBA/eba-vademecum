@@ -396,6 +396,25 @@ p.product-short-desc {
     margin-bottom: .5rem;
 }
 
+.product-price {
+    display: flex;
+    align-items: baseline;
+    font-family: 'Raleway', sans-serif;
+    color: #0C2545;
+    font-size: 1.5rem;
+}
+
+.price-symbol, 
+.price-decimal {
+    font-size: 1.5rem;
+    padding: 0 .2rem;
+}
+.price-total {
+    font-weight: 900;
+    color: #0C2545;
+    font-family: 'Roboto', sans-serif;
+}
+
 #higiene h2,
 #mascaras h2,
 #acido-hialuronico h2,

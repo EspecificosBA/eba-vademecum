@@ -39,13 +39,40 @@ const CONFIG = {
   },
   "dom-a": {
       contactInformation: false,
-      productFilter: products => products,
+      productFilter: products => Object.keys(products).reduce((acc, x) => {
+        var filtered = products[x].filter(p => {
+                let v = p.variants.filter(v => v.code < 2000 );
+                return v.length || p.category.includes('Protección Solar');
+            });
+        return {
+            ...acc,
+            [x]: filtered, 
+        }
+    }, {}),
       prices: true,
+      categories: [
+        [ "Higiene", "higiene" ],
+        [ "Ácido Hialurónico", "acido-hialuronico" ],
+        [ "Corporales", "corporales" ],
+        [ "Hombres", "hombres" ],
+        [ "Protección Intensiva", "proteccion-intensiva" ],
+        [ "Monodosis", "monodosis" ],
+        [ "Protección Solar", "proteccion-solar" ]
+      ]
   },
-  "dom-a": {
+  "dom-b": {
       contactInformation: false,
       productFilter: products => products,
       prices: false,
+      categories: [
+        [ "Higiene", "higiene" ],
+        [ "Ácido Hialurónico", "acido-hialuronico" ],
+        [ "Corporales", "corporales" ],
+        [ "Hombres", "hombres" ],
+        [ "Protección Intensiva", "proteccion-intensiva" ],
+        [ "Monodosis", "monodosis" ],
+        [ "Protección Solar", "proteccion-solar" ]
+      ]
   },
 };
 
@@ -64,14 +91,23 @@ const Section = (title, paragraph, prepend) => (
   </div>
 );
 
-const Product = (product, key) => (
+const Product = (product, key, prices) => (
   <div className="product-container">
-    <div className="row valign-wrapper">
+    <div className="row">
       <div class="col s2">
-        <img 
-          src={`images/_img/${product.img || product.variants[0].img}.png`}
-          className="responsive-img"
-        />
+      {
+        prices ? (
+          <img 
+            src={`images/_img/${product.variants[0].img || product.img}.png`}
+            className="responsive-img"
+          />
+        ) : (
+          <img 
+            src={`images/_img/${product.img || product.variants[0].img}.png`}
+            className="responsive-img"
+          />
+        )
+      }
       </div>
       <div class="col s10">
         <h4 className="primary-title">
@@ -81,6 +117,20 @@ const Product = (product, key) => (
           <p className="product-short-desc" lang="es">
             {product.shortDesc}
           </p>
+          {
+            prices && (
+              <div className="product-price">
+                <div className="price-tag">
+                  <h5>
+                    <span className="price-symbol">$</span> 
+                    <span className="price-total">{product.variants[0].sellPrice}</span>
+                    <sup className="price-decimal">00</sup>
+                  </h5>
+                </div>
+                <div className="product-size">Cont. {product.variants[0].content}</div>
+              </div>
+            )
+          }
         </div>
       </div>
     </div>
@@ -110,7 +160,7 @@ const Category = (category, products, prices) => (
       {
         products.map((p, i) => (
           <div className="collection-item">
-            { Product(p, i) }
+            { Product(p, i, prices) }
           </div>
         ))
       }
@@ -144,6 +194,7 @@ const ToC = (categories, products) => (
 
 
 const Vademecum = (categories, products, prices) => {
+  console.log("prices?", prices);
   return categories.map((categoryName, i) => (
     <div key={i}>
       {
@@ -262,6 +313,7 @@ class VademecumData extends React.Component {
       .then(response => response.json())
       .then(this.state.config.productFilter)
       .then(data => {
+        console.log("data", data)
         this.setState({
           products: data,
         })
@@ -270,7 +322,6 @@ class VademecumData extends React.Component {
 
   render() {
     const { categories, products, config } = this.state;
-    console.log(config.contactInformation);
     if (products) {
       return ( 
         <div>
