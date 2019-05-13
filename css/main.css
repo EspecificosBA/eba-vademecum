@@ -391,10 +391,6 @@ p.product-short-desc {
     page-break-inside: avoid;
 }
 
-.product-container:not(:first-child()) {
-    padding-top: 1rem;
-}
-
 .product-container
 .row {
     margin-bottom: .5rem;
@@ -419,3 +415,12 @@ p.product-short-desc {
 .container {
     width: 90%;
 }
+
+@page {
+    margin: 1rem 0;
+}
+
+@page :first {
+    margin: 0;
+}
+
