@@ -417,12 +417,16 @@ p.product-short-desc {
 }
 
 #higiene h2,
-#mascaras h2,
-#acido-hialuronico h2,
-#hombres h2,
-#proteccion-intensiva h2,
-#monodosis h2,
-#proteccion-solar h2 {
+#mascaras.prof h2,
+#acido-hialuronico.prof h2,
+#hombres.prof h2,
+#proteccion-intensiva.prof h2,
+#monodosis.prof h2,
+#proteccion-solar.prof h2 {
+    page-break-before: always;
+}
+
+#corporales.dom h2 {
     page-break-before: always;
 }
 

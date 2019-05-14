@@ -4,6 +4,7 @@ const dom = React.createElement;
 
 const CONFIG = {
   "prof-a": {
+      title: "Vademecum Profesional",
       contactInformation: true,
       productFilter: products => products,
       prices: false,
@@ -21,6 +22,7 @@ const CONFIG = {
       ]
   },
   "prof-b": {
+      title: "Vademecum Profesional",
       contactInformation: false,
       productFilter: products => products,
       prices: false,
@@ -38,6 +40,7 @@ const CONFIG = {
       ]
   },
   "dom-a": {
+      title: "Vademecum Apoyo Domiciliario",
       contactInformation: false,
       productFilter: products => Object.keys(products).reduce((acc, x) => {
         var filtered = products[x].filter(p => {
@@ -61,6 +64,7 @@ const CONFIG = {
       ]
   },
   "dom-b": {
+      title: "Vademecum Apoyo Domiciliario",
       contactInformation: false,
       productFilter: products => products,
       prices: false,
@@ -93,7 +97,7 @@ const Section = (title, paragraph, prepend) => (
 
 const Product = (product, key, prices) => (
   <div className="product-container">
-    <div className="row">
+    <div className="row valign-wrapper">
       <div class="col s2">
       {
         prices ? (
@@ -154,7 +158,7 @@ const Product = (product, key, prices) => (
 );
 
 const Category = (category, products, prices) => (
-  <section id={category[TAG]} className="container">
+  <section id={category[TAG]} className={`container ${prices ? 'dom' : 'prof'}`}>
     <h2 className="category-name">{category[LABEL]}</h2>
     <div className="collection">
       {
